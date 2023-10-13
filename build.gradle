@@ -1,0 +1,28 @@
+buildscript {
+    ext.versions = [:]
+    versions.compileSdk = 34
+    versions.minSdk = 21
+    versions.targetSdk = 34
+    versions.kotlin = '1.9.10'
+    versions.work = "2.8.1"
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.1.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
